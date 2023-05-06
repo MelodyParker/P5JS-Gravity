@@ -1,5 +1,6 @@
 let body1;
 let bodies = [];
+const BIG_G = 10000;
 
 function dist2(vec1, vec2) {
     let xDist = vec1.x - vec2.x;

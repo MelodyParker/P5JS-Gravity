@@ -15,7 +15,7 @@ class Body {
     }
 
     update() {
-        this.vel.add(deltaTime * this.acc);
+        this.vel.add(this.acc.mult(deltaTime));
         this.pos.add(this.vel.mult(deltaTime));
         this.acc = createVector(0, 0);
     }
