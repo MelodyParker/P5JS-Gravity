@@ -6,6 +6,7 @@ class Body {
         this.r = radius
         this.mass = mass
         this.color = col
+        this.id = random()
     }
 
     show() {
@@ -14,8 +15,8 @@ class Body {
     }
 
     update() {
-        this.vel += deltaTime * this.acc;
-        this.pos += deltaTime * this.vel;
+        this.vel.add(deltaTime * this.acc);
+        this.pos.add(this.vel.mult(deltaTime));
         this.acc = createVector(0, 0);
     }
 
@@ -24,6 +25,6 @@ class Body {
     }
 
     gravityAttractionForce(other) {
-        BIG_G * this.mass * other.mass / dist2(this.pos, other.pos)
+        return BIG_G * this.mass * other.mass / dist2(this.pos, other.pos);
     }
 }

@@ -18,7 +18,12 @@ function setup() {
 function draw() {
     background("#00FFFF");
     for (let body of bodies) {
+        for (let body2 of bodies) {
+            if (body.id !== body.id)
+                body.applyForce(body.gravityAttractionForce(body2))
+        }
         body.show();
+        body.update();
     }
 
 }
