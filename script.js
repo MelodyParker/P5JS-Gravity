@@ -1,6 +1,13 @@
 let body1;
 let bodies = [];
 
+function dist2(vec1, vec2) {
+    let xDist = vec1.x - vec2.x;
+    let yDist = vec1.y - vec2.y;
+    return xDist * xDist + yDist * yDist;
+}
+
+
 function setup() {
     createCanvas(400, 400);
     body1 = new Body(200, 200, 30, 10, "#0000FF");
